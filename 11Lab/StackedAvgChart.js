@@ -123,9 +123,6 @@ class StackedAvgChart {
 			translate(0,this.data[i][this.yValues]);
 		
 
-
-//START PUSH, TRANSLATE GAP, FOR LOOP(X<THIS.NUMROWS), PUSH,INSIDE, FOR LOOP(Y < THIS.YVALUES.LENGTH), RECT(0,0,BARWIDTH,THIS.DATA(X)[THIS.YVALUES(Y)]) ,POP. TRANSLATE (0,THIS.DATA(X)[THIS.YVALUES(Y)]) POP, TRANSLATE(GAP+MARGIN,0)
-
 			noStroke();
 			fill(this.labelColour);
 			textFont(fontReg);

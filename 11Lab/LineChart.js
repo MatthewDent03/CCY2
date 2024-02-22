@@ -1,4 +1,4 @@
-class StackedBarChart {
+class LineChart {
 	constructor(obj){ //Initialising the constructor within the barchart class. Declaring variables that are called within the file and assigning them an object from the sketch.js file.
 		this.data = obj.data;   //declaring the variables required for positioning and measurements
 		this.chartWidth = obj.chartWidth;
@@ -118,7 +118,6 @@ class StackedBarChart {
 			pop();
 			translate(0,this.data[i][this.yValues]);
 		
-
 			noStroke();
 			fill(this.labelColour);
 			textFont(fontReg);
