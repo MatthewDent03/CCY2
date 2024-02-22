@@ -117,12 +117,13 @@ function setup(){
 		xPos:680,
 		yPos:1200,
 		axisLineColour:"#edbf33",
-		barWidth:20,
-		yValue:"TOTAL",
+		barWidth:25,
+		yValue:"Quite Effective",
+		yValues:["Quite Effective", "Not Effective At All"],
 		barColour:random(randomBarColour),
 		labelColour: "#ede15b",
 		labelRotation: 45,
-		labelPadding: 10,
+		labelPadding: 15,
 		textSizing: 13,
 		xValue: "Age Group",
 		numTicks: 16,
@@ -132,15 +133,15 @@ function setup(){
 		tickTextSize: 15,
 		yAxisLabel: "UNIT",
 		axisLabelRotation: 270,
-		xAxisLabel: "Level of Effectiveness",
-		barLabelValue: "Level of Effectiveness",
+		xAxisLabel: "Age Group",
+		barLabelValue: ["Quite Effective", "Not Effective At All"],
 		textSizeSmall: 15,
 	}
 
 	barCharts.push(new BarChart(barChart02));
 	barCharts.push(new HorizontalBarChart(barChart01));
 	barCharts.push(new StackedBarChart(barChart03));
-	// barCharts.push(new StackedAvgChart(barChart04));
+	barCharts.push(new StackedAvgChart(barChart04));
 };
 
 function draw(){
