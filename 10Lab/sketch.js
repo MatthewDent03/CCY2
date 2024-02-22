@@ -46,7 +46,7 @@ function setup(){
 		yPos:600,
 		axisLineColour:"#edbf33",
 		barWidth:20,
-		yValue:"VALUE",
+		yValue:20,
 		barColour:random(randomBarColour),
 		labelColour: "#ede15b",
 		labelRotation: 45,
@@ -60,8 +60,8 @@ function setup(){
 		tickTextSize: 15,
 		yAxisLabel: "UNIT",
 		axisLabelRotation: 270,
-		xAxisLabel: "Level of Effectiveness",
-		barLabelValue: "Level of Effectiveness",
+		xAxisLabel: 40,
+		barLabelValue: 80,
 		textSizeSmall: 15,
 	}
 

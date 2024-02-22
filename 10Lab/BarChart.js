@@ -29,7 +29,7 @@ class BarChart {
 		this.xAxisLabel = obj.xAxisLabel;
 
 		this.barLabelValue = this.data.map(d=> d[obj.barLabelValue]);
-		console.log(this.barLabelValue);
+		console.log(this.data);
 
 		this.numTicks = obj.numTicks;
 		this.tickColour = obj.tickColour;

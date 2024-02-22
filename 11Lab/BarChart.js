@@ -14,6 +14,7 @@ class BarChart {
 		//declaring the data variables which are set to the data columns within the sketch.js file
 		this.yValue = obj.yValue;
 		this.xValue = obj.xValue;
+		console.log()
 
 		//declaring the text sizes, label properties that can be changed through the sketch.js file
 		this.labelPadding = obj.labelPadding;
@@ -25,7 +26,8 @@ class BarChart {
 		this.textSizeSmall = obj.textSizeSmall;
 		//declaring the values for the labels for the axis through the index of the data
 		this.titleLabel = this.data[0][obj.titleLabel];
-		this.yAxisLabel = this.data[0][obj.yAxisLabel];
+
+		this.yAxisLabel = obj.yAxisLabel;
 		this.xAxisLabel = obj.xAxisLabel;
 		//mapping the data to create a separate list of the object properties 
 		this.barLabelValue = this.data.map(d=> d[obj.barLabelValue]);
@@ -38,7 +40,7 @@ class BarChart {
 		//creating the scale using the maxValue
 		this.scale = this.chartHeight / this.maxValue;
 		// console.log(this.yValue);
-		
+		console.log()
 	}
 
 	render(){
@@ -99,7 +101,7 @@ class BarChart {
 		for(let i = 0; i < this.data.length; i++) { //initialising a loop to find the number of bars required
 			fill(this.barColour);
 			rect(0,0,this.barWidth,-this.data[i][this.yValue]*this.scale);  //drawing the bars and each iteration of the loop will increase the gap between each bar 
-			// console.log(this.data[i][this.yValue]);
+			console.log(this.data[i][this.yValue]);
 			noStroke();
 			fill(this.labelColour);
 			textFont(fontReg);
@@ -117,15 +119,15 @@ class BarChart {
 			rotate(this.labelRotation);
 			fill(this.tickColour)
 			noStroke();
-			text(xLabels[i], 0, 0); //displaying the xValues along the axis 
+			text(xLabels[i], 0, 10); //displaying the xValues along the axis 
 			pop();
 
 			push();
 			textFont(fontReg);
 			textSize(this.textSizeSmall);
 			translate(this.labelPadding,-this.data[i][this.yValue]*this.scale - 5);
-			rotate(this.axisLabelRotation);
-			text(this.barLabelValue[i],0,0); //displaying the age groups along the bars end
+			rotate(this.labelRotation);
+			text(this.barLabelValue[i],6,-5); //displaying the age groups along the bars end
 			pop();
 			translate(gap+this.barWidth,0); //translating the bars origin
 		}

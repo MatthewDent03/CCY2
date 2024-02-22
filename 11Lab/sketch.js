@@ -20,7 +20,7 @@ function preload(){
 }
 
 function setup(){
-	createCanvas(1200,1600);
+	createCanvas(1200,1400);
 	angleMode(DEGREES);
 	numRows = data.rows.length;
 	for(let i = 0; i < numRows; i++){
@@ -35,7 +35,7 @@ function setup(){
 		yPos:550,
 		axisLineColour:"#edbf33",
 		barWidth:20,
-		yValue: "TOTAL",
+		yValue: "Not Very Effective",
 		barColour:random(randomBarColour),
 		labelColour: "#ede15b",
 		labelRotation: 90,
@@ -47,11 +47,11 @@ function setup(){
 		titleLabel: "Statistic Label",
 		titleSize: 20,
 		tickTextSize: 14,
-		yAxisLabel: "UNIT",
+		yAxisLabel: "Not Very Effective",
 		yaxisLabelRotation: 270,
 		xaxisLabelRotation: 0,
-		xAxisLabel: "Level of Effectiveness",
-		barLabelValue: "Level of Effectiveness",
+		xAxisLabel: "Age Group",
+		barLabelValue: "Not Very Effective",
 		textSizeSmall: 15,
 	}
 //regular
@@ -63,22 +63,22 @@ function setup(){
 		yPos:550,
 		axisLineColour:"#edbf33",
 		barWidth:20,
-		yValue:"TOTAL",
+		yValue:"Very Effective",
 		barColour:random(randomBarColour),
 		labelColour: "#ede15b",
-		labelRotation: 45,
-		labelPadding: 10,
-		textSizing: 13,
+		labelRotation: 0,
+		labelPadding: 3,
+		textSizing: 15,
 		xValue: "Age Group",
-		numTicks: 16,
+		numTicks: 10,
 		tickColour: "#ef9b20",
 		titleLabel: "Statistic Label",
 		titleSize: 20,
 		tickTextSize: 15,
-		yAxisLabel: "UNIT",
+		yAxisLabel: "Very Effective",
 		axisLabelRotation: 270,
-		xAxisLabel: "Level of Effectiveness",
-		barLabelValue: "Level of Effectiveness",
+		xAxisLabel: "Age Group",
+		barLabelValue: "Very Effective",
 		textSizeSmall: 15,
 	}
 	//stacked
@@ -87,14 +87,15 @@ function setup(){
 		chartHeight:350,
 		chartWidth:350, 
 		xPos:100,
-		yPos:1400,
+		yPos:1200,
 		axisLineColour:"#edbf33",
-		barWidth:20,
-		yValue:"TOTAL",
+		barWidth:25,
+		yValue:"Quite Effective",
+		yValues:["Quite Effective", "Not Effective At All"],
 		barColour:random(randomBarColour),
 		labelColour: "#ede15b",
 		labelRotation: 45,
-		labelPadding: 10,
+		labelPadding: 15,
 		textSizing: 13,
 		xValue: "Age Group",
 		numTicks: 16,
@@ -104,17 +105,17 @@ function setup(){
 		tickTextSize: 15,
 		yAxisLabel: "UNIT",
 		axisLabelRotation: 270,
-		xAxisLabel: "Level of Effectiveness",
-		barLabelValue: "Level of Effectiveness",
+		xAxisLabel: "Age Group",
+		barLabelValue: ["Quite Effective", "Not Effective At All"],
 		textSizeSmall: 15,
 	}
-	//hundred%
+	//avgStacked
 	let barChart04 = {
 		data:cleanData, 
-		chartHeight:150,
+		chartHeight:350,
 		chartWidth:350, 
 		xPos:680,
-		yPos:1400,
+		yPos:1200,
 		axisLineColour:"#edbf33",
 		barWidth:20,
 		yValue:"TOTAL",
@@ -136,11 +137,10 @@ function setup(){
 		textSizeSmall: 15,
 	}
 
-	// barCharts.push(new BarChart(barChart01));
 	barCharts.push(new BarChart(barChart02));
 	barCharts.push(new HorizontalBarChart(barChart01));
 	barCharts.push(new StackedBarChart(barChart03));
-	barCharts.push(new HundredBarChart(barChart04));
+	// barCharts.push(new StackedAvgChart(barChart04));
 };
 
 function draw(){
