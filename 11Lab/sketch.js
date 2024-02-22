@@ -20,7 +20,7 @@ function preload(){
 }
 
 function setup(){
-	createCanvas(1200,1400);
+	createCanvas(1200,2000);
 	angleMode(DEGREES);
 	numRows = data.rows.length;
 	for(let i = 0; i < numRows; i++){
@@ -142,12 +142,12 @@ function setup(){
 		data:cleanData, 
 		chartHeight:350,
 		chartWidth:350, 
-		xPos:680,
-		yPos:1200,
+		xPos:380,
+		yPos:1900,
 		axisLineColour:"#edbf33",
 		barWidth:25,
 		yValue:"Quite Effective",
-		yValues:["Quite Effective", "Not Effective At All"],
+		yValues:["Quite Effective", "Not Effective At All", "Not Very Effective"],
 		barColour:random(randomBarColour),
 		labelColour: "#ede15b",
 		labelRotation: 45,
@@ -163,14 +163,14 @@ function setup(){
 		axisLabelRotation: 270,
 		xAxisLabel: "Age Group",
 		barLabelValue: ["Quite Effective", "Not Effective At All"],
-		textSizeSmall: 15,
+		textSizeSmall: 8,
 	}
 
 	barCharts.push(new BarChart(barChart02));
 	barCharts.push(new HorizontalBarChart(barChart01));
 	barCharts.push(new StackedBarChart(barChart03));
 	barCharts.push(new StackedAvgChart(barChart04));
-	barCharts.push(new LineChart(barChart05));
+	barCharts.push(new BubbleChart(barChart05));
 };
 
 function draw(){

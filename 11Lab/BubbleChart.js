@@ -1,4 +1,4 @@
-class LineChart {
+class BubbleChart {
 	constructor(obj){ //Initialising the constructor within the barchart class. Declaring variables that are called within the file and assigning them an object from the sketch.js file.
 		this.data = obj.data;   //declaring the variables required for positioning and measurements
 		this.chartWidth = obj.chartWidth;
@@ -104,20 +104,21 @@ class LineChart {
 			push();
 			fill(this.barColour)
 			for(let j = 0; j < this.yValues.length; j++) {
-				rect(0,0,this.barWidth,-this.data[i][this.yValues[j]] * this.scale);
+				ellipse(this.data[i][this.yValues[j]],-this.data[i][this.yValues[j]]*this.scale,-this.data[i][this.yValues[j]],-this.data[i][this.yValues[j]]);
 				console.log(this.scale)
 				push();
 				textFont(fontBold);
 				fill(this.labelColour)
 				textSize(this.textSizeSmall);
 				translate(this.labelPadding,-this.data[i][this.yValues[j]]*this.scale);
-				text(this.data[i][this.yValues[j]],-10,20); //displaying the age groups along the bars end
+				text([this.yValues[j]],18,-this.data[i][this.yValues[j]],30); //displaying the age groups along the bars end
 				pop();
 			}
 			
 			pop();
 			translate(0,this.data[i][this.yValues]);
 		
+
 			noStroke();
 			fill(this.labelColour);
 			textFont(fontReg);
