@@ -59,7 +59,7 @@ class StackedAvgChart {
 
 		push();//pushing to prevent the rotate function from affecting other parts of code
 		rotate(this.axisLabelRotation);//using strings to create the labels for the axis pulling the property name from the object.
-		text("Value as " + this.yAxisLabel, this.chartWidth/2 - 50, this.chartHeight/this.chartHeight - 50, 200);
+		text("Value as " + this.yAxisLabel, this.chartWidth/2 - 50, this.chartHeight/this.chartHeight - 120, 250);
 		pop();
 
 		text("Value as " + this.xAxisLabel, this.chartWidth/2-50, this.chartHeight/this.chartHeight + 120, 200);

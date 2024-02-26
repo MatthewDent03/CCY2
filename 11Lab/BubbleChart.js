@@ -61,7 +61,7 @@ class BubbleChart {
 		text("Value as " + this.yAxisLabel, this.chartWidth/2 - 50, this.chartHeight/this.chartHeight - 50, 200);
 		pop();
 
-		text("Value as " + this.xAxisLabel, this.chartWidth/2-50, this.chartHeight/this.chartHeight + 120, 200);
+		text("Value as " + this.xAxisLabel, this.chartWidth/5, this.chartHeight/this.chartHeight + 110, 300);
 
 
 		fill(255);//creating the chart x and y axis lines

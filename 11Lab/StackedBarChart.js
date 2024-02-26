@@ -61,7 +61,7 @@ class StackedBarChart {
 
 		push();//pushing to prevent the rotate function from affecting other parts of code
 		rotate(this.axisLabelRotation);//using strings to create the labels for the axis pulling the property name from the object.
-		text("Value as " + this.yAxisLabel, this.chartWidth/2 - 50, this.chartHeight/this.chartHeight - 50, 200);
+		text("Value as " + this.yAxisLabel, this.chartWidth/2 - 50, this.chartHeight/this.chartHeight - 120, 250);
 		pop();
 
 		text("Value as " + this.xAxisLabel, this.chartWidth/2-50, this.chartHeight/this.chartHeight + 120, 200);
@@ -91,7 +91,6 @@ class StackedBarChart {
 			textAlign(RIGHT, CENTER);
 			translate(0,i*(-this.chartHeight/this.numTicks))
 			text(parseFloat(i*tickValue).toFixed(0),-10,0);
-			// console.log(i*(this.maxValue/this.scale));
 			pop();
 		}
 		// line(0,0,-10,0)
