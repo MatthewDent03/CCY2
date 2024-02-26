@@ -104,7 +104,7 @@ class BarChart {
 			console.log(this.data[i][this.yValue]);
 			noStroke();
 			fill(this.labelColour);
-			textFont(fontReg);
+			textFont(fontReg);  //Aligning the text depending on the set rotation through the sketch file
 			if (this.labelRotation == 0){
 				textAlign(CENTER, CENTER);
 			} else {
