@@ -38,7 +38,7 @@ class HorizontalBarChart {
 		//creating a variable assigned the max of the mapped data of the yValue
 		this.maxValue = max(this.data.map((d) => d[this.yValue]));
 		//creating the scale using the maxValue
-		this.scale = this.chartHeight / this.maxValue;
+		this.scale = this.chartWidth / this.maxValue;
 		// console.log(this.scale);
 	}
 
@@ -76,13 +76,6 @@ class HorizontalBarChart {
 			pop();
 		};
 		//declaring a tickValue to find the values to be displayed and rounded using parseFloat to the axis
-		for(let i = 0; i < 1000; i++){
-			if(this.maxValue%this.numTicks == 0){
-				break;
-			} else {
-				this.maxValue =this.maxValue+1;
-			}
-		}
 		let gap = (this.chartWidth - (this.data.length * this.barWidth))/(this.data.length+1); //declaring the gap variable and its formula to create the gap between bars
 		
 		let yLabelValues = this.data.map(d => d[this.yValue]); //mapping the yValue data to assigned to a  variable
@@ -106,7 +99,7 @@ class HorizontalBarChart {
 		noStroke();
 		translate(1, 0); //translating the origin of the bars
 		for(let i = 0; i < this.data.length; i++) {//drawing the bars and each iteration of the loop will increase the gap between each bar 
-			fill(this.barColour);
+			fill(this.barColour[i]);
 			rect(0,0,this.data[i][this.yValue]*this.scale,-this.barWidth);  //drawing the bars and each iteration of the loop will increase the gap between each bar 
 			// noStroke();
 			fill(this.labelColour);

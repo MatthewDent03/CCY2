@@ -41,7 +41,7 @@ function setup(){
 		labelPadding: 25,
 		textSizing: 13,
 		xValue: "Age Group",
-		numTicks: 16,
+		numTicks: 10,
 		tickColour: "#ef9b20",
 		titleLabel: "Statistic Label",
 		titleSize: 20,
@@ -98,7 +98,7 @@ function setup(){
 		labelPadding: 15,
 		textSizing: 13,
 		xValue: "Age Group",
-		numTicks: 16,
+		numTicks: 10,
 		tickColour: "#ef9b20",
 		titleLabel: "Statistic Label",
 		titleSize: 20,
@@ -108,6 +108,7 @@ function setup(){
 		xAxisLabel: "Age Group",
 		barLabelValue: ["Quite Effective", "Not Effective At All"],
 		textSizeSmall: 15,
+		type:"REG",
 	}
 	//avgStacked
 	let barChart04 = {
@@ -139,6 +140,7 @@ function setup(){
 		textSizeSmall: 15,
 	}
 
+	//Bubble chart
 	let barChart05 = {
 		data:cleanData, 
 		chartHeight:350,
@@ -167,6 +169,7 @@ function setup(){
 		textSizeSmall: 8,
 	}
 
+	//2nd Barchart vertical
 	let barChart06 = {
 		data:cleanData, 
 		chartHeight:350,

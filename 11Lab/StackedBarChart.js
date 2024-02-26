@@ -41,6 +41,8 @@ class StackedBarChart {
 		this.maxValue = max(this.data.map((d) => d[this.zValue]));
 		//creating the scale using the maxValue
 		this.scale = this.chartHeight / this.maxValue;
+
+		this.type = obj.type;
 		// console.log(this.yValue);
 
 	}
@@ -97,51 +99,65 @@ class StackedBarChart {
 		// line(0,-10,-10,-10)
 		noStroke(); //Declaring a gap variable.
 		let gap = (this.chartWidth - (this.data.length * this.barWidth))/(this.data.length+1);
+		let totalAdded = 0;
 		push()
 		let xLabels = this.data.map(d => d[this.xValue]); //assigned the mapped values of the property xValue to the variable xLabels
-		translate(gap, 0); //translating the origin of the bars by the gap
-		for(let i = 0; i < this.data.length; i++){
-			stroke(0);
-			push();
-			for(let j = 0; j < this.yValues.length; j++) {
-				fill(this.barColour[j])
-				rect(0,0,this.barWidth,-this.data[i][this.yValues[j]] * this.scale);
-				console.log(this.scale)
+			translate(gap, 0); //translating the origin of the bars by the gap
+			for(let i = 0; i < this.data.length; i++){
+				stroke(0);
 				push();
-				textFont(fontBold);
-				fill(this.labelColour)
-				textSize(this.textSizeSmall);
-				translate(this.labelPadding,-this.data[i][this.yValues[j]]*this.scale);
-				text(this.data[i][this.yValues[j]],-10,20); //displaying the age groups along the bars end
+				for(let j = 0; j < this.yValues.length; j++) {
+					let addedValues = parseFloat(this.data[i][this.yValues[j]]);
+					totalAdded += addedValues
+					fill(this.barColour[j])
+					rect(0,0,this.barWidth,-this.data[i][this.yValues[j]] * this.scale);
+					console.log(this.scale)
+					push();
+					textFont(fontBold);
+					fill(this.labelColour)
+					textSize(this.textSizeSmall);
+					translate(this.labelPadding,-this.data[i][this.yValues[j]]*this.scale);
+					text(this.data[i][this.yValues[j]],-10,20); //displaying the age groups along the bars end
+					pop();
+				}
+				console.log(this.scale)
 				pop();
+				translate(0,this.data[i][this.yValues]);
+			
+
+				noStroke();
+				fill(this.labelColour);
+				textFont(fontReg);
+				if (this.labelRotation == 0){
+					textAlign(CENTER, CENTER);
+				} else {
+					textAlign(LEFT, CENTER);
+				}
+
+				textSize(this.textSizing);
+
+				push();//pushing to prevent the translate from affecting other code
+				textFont(fontBold);
+				translate(this.barWidth/2, this.labelPadding);
+				rotate(this.labelRotation);
+				fill(this.tickColour)
+				noStroke();
+				text(xLabels[i], 0, 10); //displaying the xValues along the axis 
+				pop();
+				translate(gap+this.barWidth,0); //translating the bars origin
 			}
-			console.log(this.scale)
-			pop();
-			translate(0,this.data[i][this.yValues]);
+			pop()
+		if (this.type == "REG"){
+			//no change
 		
-
-			noStroke();
-			fill(this.labelColour);
-			textFont(fontReg);
-			if (this.labelRotation == 0){
-				textAlign(CENTER, CENTER);
-			} else {
-				textAlign(LEFT, CENTER);
-			}
-
-			textSize(this.textSizing);
-
-			push();//pushing to prevent the translate from affecting other code
-			textFont(fontBold);
-			translate(this.barWidth/2, this.labelPadding);
-			rotate(this.labelRotation);
-			fill(this.tickColour)
-			noStroke();
-			text(xLabels[i], 0, 10); //displaying the xValues along the axis 
-			pop();
-			translate(gap+this.barWidth,0); //translating the bars origin
-		}
-		pop()
+		} else if (this.type == "AVG")
+		 {
+			let average = totalAdded / (this.data.length * this.yValues.length);	
+			console.log(average);
+			stroke(255,0,0);
+			line(0, -average * this.scale, this.chartWidth, -average * this.scale);
+			pop()
+		}; 
 		pop();
 	}
 
