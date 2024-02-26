@@ -101,27 +101,24 @@ class StackedAvgChart {
 		push()
 		let xLabels = this.data.map(d => d[this.xValue]); //assigned the mapped values of the property xValue to the variable xLabels
 		translate(gap, 0); //translating the origin of the bars by the gap
-		for(let i = 0; i < this.data.length; i++){
+		for(let i = 0; i < this.data.length; i++){ //initiating i loop for the length of the data array
 			stroke(0);
-			push();
-			for(let j = 0; j < this.yValues.length; j++) {
-				let addedValues = parseFloat(this.data[i][this.yValues[j]]);
-				totalAdded += addedValues
+			push(); //pushing to prevent changes to outside code
+			for(let j = 0; j < this.yValues.length; j++) { //initiating j loop for length of the array of yValues
+				let addedValues = parseFloat(this.data[i][this.yValues[j]]); //declaring a variable assigned the value of each index of i of yValues
+				totalAdded += addedValues //adding the values assigned to addedValues each iteration of the loop to total the values
 				fill(this.barColour[j])
-				rect(0,0,this.barWidth,-(this.data[i][this.yValues[j]]) * this.scale);
+				rect(0,0,this.barWidth,-(this.data[i][this.yValues[j]]) * this.scale); //creating the bars with each iteration of the loop and setting the next bar height as the previous index height
 				push();
 				textFont(fontBold);
 				fill(this.labelColour)
 				textSize(this.textSizeSmall);
-				translate(this.labelPadding,-(this.data[i][this.yValues[j]])*this.scale);
+				translate(this.labelPadding,-(this.data[i][this.yValues[j]])*this.scale); //translating the bars to the previous index
 				text(this.data[i][this.yValues[j]],-10,20); //displaying the age groups along the bars end
 				pop();
-				console.log("added total = " + totalAdded);
 			}
-			console.log(totalAdded)
-			console.log(this.scale)
 			pop();
-			translate(0,this.data[i][this.yValues]);
+			translate(0,this.data[i][this.yValues]); //translating the bars origin 
 		
 
 			noStroke();
@@ -146,10 +143,10 @@ class StackedAvgChart {
 			translate(gap+this.barWidth,0); //translating the bars origin
 		}
 
-		let average = totalAdded / (this.data.length * this.yValues.length);	
+		let average = totalAdded / (this.data.length * this.yValues.length);	//finding the average through dividing the total by the length of the array of data times the length of the array of values
 		console.log(average);
 		stroke(255,0,0);
-		line(0, -average * this.scale, -this.chartWidth, -average * this.scale);
+		line(0, -average * this.scale, -this.chartWidth, -average * this.scale); //drawing the line from the 0 point of the origin to the average value position as height, for the length of the chart to the position of the average value
 		pop()
 
 		pop();
