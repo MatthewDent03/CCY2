@@ -198,12 +198,41 @@ function setup(){
 		textSizeSmall: 15,
 	}
 
+	let barChart07 = {
+		data:cleanData, 
+		chartHeight:350,
+		chartWidth:350, 
+		xPos:1700,
+		yPos:550,
+		axisLineColour:"#edbf33",
+		barWidth:20,
+		yValue: "Quite Effective",
+		barColour:["#ea5545", "#f46a9b", "#bdcf32", "#87bc45", "#27aeef", "#b33dc6"],
+		labelColour: "#ede15b",
+		labelRotation: 90,
+		labelPadding: 25,
+		textSizing: 13,
+		xValue: "Age Group",
+		numTicks: 10,
+		tickColour: "#ef9b20",
+		titleLabel: "Statistic Label",
+		titleSize: 20,
+		tickTextSize: 14,
+		yAxisLabel: "Quite Effective",
+		yaxisLabelRotation: 270,
+		xaxisLabelRotation: 0,
+		xAxisLabel: "Age Group",
+		barLabelValue: "Quite Effective",
+		textSizeSmall: 15,
+	}
+
 	barCharts.push(new BarChart(barChart02));
 	barCharts.push(new HorizontalBarChart(barChart01));
 	barCharts.push(new StackedBarChart(barChart03));
 	barCharts.push(new StackedAvgChart(barChart04));
 	barCharts.push(new BubbleChart(barChart05));
 	barCharts.push(new BarChart(barChart06));
+	barCharts.push(new HorizontalBarChart(barChart07));
 };
 
 function draw(){
