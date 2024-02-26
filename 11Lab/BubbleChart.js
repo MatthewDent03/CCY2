@@ -104,13 +104,13 @@ class BubbleChart {
 			push();
 			for(let j = 0; j < this.yValues.length; j++) {
 				fill(this.barColour[j]);
-				ellipse(this.data[i][this.yValues[j]],-this.data[i][this.yValues[j]]*this.scale,-this.data[i][this.yValues[j]],-this.data[i][this.yValues[j]]);
-				console.log(this.scale)
+				ellipse(this.data[i][this.yValues[j]],-this.data[i][this.yValues[j]]*this.scale,-this.data[i][this.yValues[j]],-this.data[i][this.yValues[j]]); 
+				//creating ellipses with the area assigned the values of the yValues array indexes
 				push();
 				textFont(fontBold);
 				fill(this.labelColour)
 				textSize(this.textSizeSmall);
-				translate(this.labelPadding,-this.data[i][this.yValues[j]]*this.scale);
+				translate(this.labelPadding,-this.data[i][this.yValues[j]]*this.scale); //translating the text to the y axis
 				text([this.yValues[j]],18,-this.data[i][this.yValues[j]],30); //displaying the age groups along the bars end
 				pop();
 			}
