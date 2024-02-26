@@ -253,11 +253,20 @@ class StackedBarChart {
 			
 			} else if (this.type == "AVG")
 			{
-				let average = totalAdded / (this.data.length * this.yValues.length);	
-				console.log(average);
-				stroke(255,0,0);
-				line(0, -average * this.scale, this.chartWidth, -average * this.scale);
-				pop()
+				if(this.stackedPos == "REG"){
+					let average = totalAdded / (this.data.length * this.yValues.length);	
+					console.log(average);
+					stroke(255,0,0);
+					line(0, -average * this.scale, this.chartWidth, -average * this.scale);
+					pop()
+				}
+				else if(this.stackedPos == "HZT"){
+					let average = totalAdded / (this.data.length * this.yValues.length);	
+					console.log(average);
+					stroke(255,0,0);
+					line(average * this.scale,0 , average * this.scale, -this.chartHeight );
+					pop()
+				}
 			}; 
 		}
 		pop();

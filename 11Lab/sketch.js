@@ -109,7 +109,7 @@ function setup(){
 		barLabelValue: ["Quite Effective", "Not Effective At All"],
 		textSizeSmall: 15,
 		type:"REG",
-		stackedPos:"HZT",
+		stackedPos:"REG",
 	}
 	//avgStacked
 	let barChart04 = {
