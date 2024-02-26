@@ -2,7 +2,6 @@ let barCharts = [];
 let data;
 let cleanData=[];
 let numRows;
-let randomBarColour = ["#ea5545", "#f46a9b", "#bdcf32", "#87bc45", "#27aeef", "#b33dc6"]
 
 let fontLight;
 let fontReg;
@@ -20,7 +19,7 @@ function preload(){
 }
 
 function setup(){
-	createCanvas(1200,2000);
+	createCanvas(windowWidth,2000);
 	angleMode(DEGREES);
 	numRows = data.rows.length;
 	for(let i = 0; i < numRows; i++){
@@ -36,7 +35,7 @@ function setup(){
 		axisLineColour:"#edbf33",
 		barWidth:20,
 		yValue: "Not Very Effective",
-		barColour:random(randomBarColour),
+		barColour:["#ea5545", "#f46a9b", "#bdcf32", "#87bc45", "#27aeef", "#b33dc6"],
 		labelColour: "#ede15b",
 		labelRotation: 90,
 		labelPadding: 25,
@@ -64,7 +63,7 @@ function setup(){
 		axisLineColour:"#edbf33",
 		barWidth:20,
 		yValue:"Very Effective",
-		barColour:random(randomBarColour),
+		barColour:["#ea5545", "#f46a9b", "#bdcf32", "#87bc45", "#27aeef", "#b33dc6"],
 		labelColour: "#ede15b",
 		labelRotation: 0,
 		labelPadding: 3,
@@ -90,9 +89,10 @@ function setup(){
 		yPos:1200,
 		axisLineColour:"#edbf33",
 		barWidth:25,
+		zValue:"TOTAL",
 		yValue:"Quite Effective",
 		yValues:["Quite Effective", "Not Effective At All"],
-		barColour:random(randomBarColour),
+		barColour:["#ea5545", "#f46a9b", "#bdcf32", "#87bc45", "#27aeef", "#b33dc6"],
 		labelColour: "#ede15b",
 		labelRotation: 45,
 		labelPadding: 15,
@@ -118,9 +118,10 @@ function setup(){
 		yPos:1200,
 		axisLineColour:"#edbf33",
 		barWidth:25,
+		zValue:"TOTAL",
 		yValue:"Quite Effective",
 		yValues:["Quite Effective", "Not Effective At All"],
-		barColour:random(randomBarColour),
+		barColour: ["#ea5545", "#f46a9b", "#bdcf32", "#87bc45", "#27aeef", "#b33dc6"],
 		labelColour: "#ede15b",
 		labelRotation: 45,
 		labelPadding: 15,
@@ -148,7 +149,7 @@ function setup(){
 		barWidth:25,
 		yValue:"Quite Effective",
 		yValues:["Quite Effective", "Not Effective At All", "Not Very Effective"],
-		barColour:random(randomBarColour),
+		barColour:["#ea5545", "#f46a9b", "#bdcf32", "#87bc45", "#27aeef", "#b33dc6"],
 		labelColour: "#ede15b",
 		labelRotation: 45,
 		labelPadding: 15,
@@ -175,7 +176,7 @@ function setup(){
 		axisLineColour:"#edbf33",
 		barWidth:20,
 		yValue:"Not Effective At All",
-		barColour:random(randomBarColour),
+		barColour:["#ea5545", "#f46a9b", "#bdcf32", "#87bc45", "#27aeef", "#b33dc6"],
 		labelColour: "#ede15b",
 		labelRotation: 0,
 		labelPadding: 3,

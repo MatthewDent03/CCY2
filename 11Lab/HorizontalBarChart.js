@@ -88,7 +88,7 @@ class HorizontalBarChart {
 		let yLabelValues = this.data.map(d => d[this.yValue]); //mapping the yValue data to assigned to a  variable
 		sort(yLabelValues);  //creating a sort function to order the values lowest to highest
 
-
+		let tickValue= this.maxValue/this.numTicks
 		for(let i = 0; i < this.numTicks; i++){ //initialising a loop to find the number of bars required
 			push();
 			fill(this.tickColour)
@@ -97,6 +97,7 @@ class HorizontalBarChart {
 			textSize(this.tickTextSize)
 			noStroke();
 			translate(i*(this.chartWidth/this.numTicks),this.labelPadding*1.5)  //translating the labels to align with the ticks
+			text(parseFloat(i*tickValue).toFixed(0),-10,0);
 			//text(yLabelValues,gap,0);
 			pop();
 		}

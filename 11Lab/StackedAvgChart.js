@@ -8,13 +8,14 @@ class StackedAvgChart {
 		//declaring the colour variables for the objects that are defined within the sketch.js file
 		this.axisLineColour = obj.axisLineColour;
 		this.labelColour = obj.labelColour;
-		this.barColour = obj.barColour;
+		this.barColour = ["#ea5545", "#f46a9b", "#bdcf32", "#87bc45", "#27aeef", "#b33dc6"];
 		//declaring the barWidth and assigning it the object within the sketch.js
 		this.barWidth = obj.barWidth;
 		//declaring the data variables which are set to the data columns within the sketch.js file
 		this.yValues = obj.yValues;
 		this.yValue = obj.yValue;
 		this.xValue = obj.xValue;
+		this.zValue = obj.zValue;
 		console.log()
 
 		//declaring the text sizes, label properties that can be changed through the sketch.js file
@@ -37,7 +38,7 @@ class StackedAvgChart {
 		this.numTicks = obj.numTicks;
 		this.tickColour = obj.tickColour;
 		//creating a variable assigned the max of the mapped data of the yValue
-		this.maxValue = max(this.data.map((d) => d[this.yValue]));
+		this.maxValue = max(this.data.map((d) => d[this.zValue]));
 		//creating the scale using the maxValue
 		this.scale = this.chartHeight / this.maxValue;
 		// console.log(this.yValue);
@@ -103,10 +104,10 @@ class StackedAvgChart {
 		for(let i = 0; i < this.data.length; i++){
 			stroke(0);
 			push();
-			fill(this.barColour)
 			for(let j = 0; j < this.yValues.length; j++) {
 				let addedValues = parseFloat(this.data[i][this.yValues[j]]);
 				totalAdded += addedValues
+				fill(this.barColour[j])
 				rect(0,0,this.barWidth,-(this.data[i][this.yValues[j]]) * this.scale);
 				push();
 				textFont(fontBold);

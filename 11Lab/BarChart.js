@@ -99,7 +99,7 @@ class BarChart {
 		let xLabels = this.data.map(d => d[this.xValue]); //assigned the mapped values of the property xValue to the variable xLabels
 		translate(gap, 0); //translating the origin of the bars by the gap
 		for(let i = 0; i < this.data.length; i++) { //initialising a loop to find the number of bars required
-			fill(this.barColour);
+			fill(this.barColour[i]);
 			rect(0,0,this.barWidth,-this.data[i][this.yValue]*this.scale);  //drawing the bars and each iteration of the loop will increase the gap between each bar 
 			console.log(this.data[i][this.yValue]);
 			noStroke();

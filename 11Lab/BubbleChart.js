@@ -102,8 +102,8 @@ class BubbleChart {
 		for(let i = 0; i < this.data.length; i++){
 			stroke(0);
 			push();
-			fill(this.barColour)
 			for(let j = 0; j < this.yValues.length; j++) {
+				fill(this.barColour[j]);
 				ellipse(this.data[i][this.yValues[j]],-this.data[i][this.yValues[j]]*this.scale,-this.data[i][this.yValues[j]],-this.data[i][this.yValues[j]]);
 				console.log(this.scale)
 				push();
