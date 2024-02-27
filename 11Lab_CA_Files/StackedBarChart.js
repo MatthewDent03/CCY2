@@ -132,6 +132,11 @@ class StackedBarChart {
 				pop();
 			}
 		}
+		for(let i = 0; i < this.yValues.length; i++){
+			fill(this.barColour[i]);
+			text(this.yValues[i],[i]*(this.chartWidth/1.5),this.chartHeight/4)
+			rect([i]*(this.chartWidth),this.chartHeight/4,20,20);
+		};
 		// line(0,0,-10,0)
 		// line(0,10,0,-10)
 		// line(0,-10,-10,-10)
