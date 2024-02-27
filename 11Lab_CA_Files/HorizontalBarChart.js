@@ -51,7 +51,7 @@ class HorizontalBarChart {
 		fill(255);
 		textSize(this.titleSize);
 		textFont(fontBold);
-		text(this.titleLabel, -20, -this.chartHeight - 130, 380);
+		text(this.titleLabel + " as percentage of " + this.yValue, -20, -this.chartHeight - 130, 380);
 
 		push();//pushing to prevent the rotate function from affecting other parts of code
 		rotate(this.yaxisLabelRotation);//using strings to create the labels for the axis pulling the property name from the object.

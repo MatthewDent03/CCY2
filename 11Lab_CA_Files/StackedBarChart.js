@@ -58,7 +58,7 @@ class StackedBarChart {
 		fill(255);
 		textSize(this.titleSize);
 		textFont(fontBold);
-		text(this.titleLabel, 0, -this.chartHeight-160, 480);
+		text(this.titleLabel + " as percentage of " + this.yValues, 0, -this.chartHeight-160, 480);
 
 		if(this.stackedPos == "REG"){
 			push();//pushing to prevent the rotate function from affecting other parts of code

@@ -53,7 +53,7 @@ class BarChart {
 		fill(255);
 		textSize(this.titleSize);
 		textFont(fontBold);
-		text(this.titleLabel, 0, -this.chartHeight-160, 480);
+		text(this.titleLabel + " as percentage of " + this.yValue, 0, -this.chartHeight-160, 480);
 
 		push();//pushing to prevent the rotate function from affecting other parts of code
 		rotate(this.axisLabelRotation);//using strings to create the labels for the axis pulling the property name from the object.
