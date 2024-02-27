@@ -179,7 +179,7 @@ function setup(){
 		tickColour: "#ef9b20",
 		//rotations
 		axisLabelRotation: 270,
-		labelRotation: 45,
+		labelRotation: 0,
 		//padding and sizing texts
 		labelPadding: 15,
 		textSizing: 13,
