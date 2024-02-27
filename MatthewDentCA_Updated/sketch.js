@@ -26,7 +26,7 @@ function setup(){
 		cleanData.push(data.rows[i].obj);  //pushing these rows of data into a variable array called clean data
 	}
 //horizontal
-	let barChart01 = {
+	let horizontalBarChart = {
 		data:cleanData, 
 		//positions and measurements
 		chartHeight:350,
@@ -42,6 +42,8 @@ function setup(){
 		labelColour: "#ede15b",
 		//rotations as degrees
 		labelRotation: 90,
+		xAxisPadding: 100,
+		yAxisPadding: 75,
 		yaxisLabelRotation: 270,
 		xaxisLabelRotation: 0,
 		//sizings and padding
@@ -56,10 +58,9 @@ function setup(){
 		yAxisLabel: "Not Very Effective",
 		yValue: "Not Very Effective",
 		xAxisLabel: "Age Group",
-		barLabelValue: "Not Very Effective",
 	}
 //regular
-	let barChart02 = {
+	let barChartRegular = {
 		data:cleanData, 
 		//position and measurements
 		chartHeight:350,
@@ -78,6 +79,8 @@ function setup(){
 		axisLabelRotation: 270,
 		//padding and text sizing
 		labelPadding: 3,
+		xAxisPadding: 60,
+		yAxisPadding: 60,
 		textSizing: 15,
 		titleSize: 20,
 		tickTextSize: 15,
@@ -91,7 +94,7 @@ function setup(){
 		barLabelValue: "Very Effective",
 	}
 	//stacked
-	let barChart03 = {
+	let stackedBarChart = {
 		data:cleanData, 
 		//positions and measurements
 		chartHeight:350,
@@ -110,25 +113,26 @@ function setup(){
 		axisLabelRotation: 270,
 		//sizes and padding for text
 		labelPadding: 15,
-		textSizing: 13,
+		xAxisPadding: 50,
+		yAxisPadding: 120,
+		textSizing: 15,
 		titleSize: 20,
 		textSizeSmall: 15,
-		tickTextSize: 15,
+		tickTextSize: 17,
 		//values for labels and bars
 		xAxisLabel: "Age Group",
 		titleLabel: "Statistic Label",
 		xValue: "Age Group",
 		yAxisLabel: ["Quite Effective and Not Effective At All"],
-		barLabelValue: ["Quite Effective", "Not Effective At All"],
 		zValue:"TOTAL",
 		yValue:"Quite Effective",
 		yValues:["Quite Effective", "Not Effective At All"],
 		//if statement responses
 		type:"REG", //REG or AVG
-		stackedPos:"REG", //REG or HZT
+		stackedPos:"HZT", //REG or HZT
 	}
 	//avgStacked
-	let barChart04 = {
+	let avgStackedBarChart = {
 		data:cleanData, 
 		//position and measurement
 		chartHeight:350,
@@ -147,10 +151,12 @@ function setup(){
 		axisLabelRotation: 270,
 		//padding and text sizes
 		labelPadding: 15,
-		textSizing: 13,
+		xAxisPadding: 50,
+		yAxisPadding: 120,
+		textSizing: 15,
 		textSizeSmall: 15,
 		titleSize: 20,
-		tickTextSize: 15,
+		tickTextSize: 17,
 		//values for labels and bars
 		titleLabel: "Statistic Label",
 		yAxisLabel: ["Quite Effective and Not Effective At All"],
@@ -159,11 +165,10 @@ function setup(){
 		zValue:"TOTAL",
 		yValue:"Quite Effective",
 		yValues:["Quite Effective", "Not Effective At All"],
-		barLabelValue: ["Quite Effective", "Not Effective At All"],
 	}
 
 	//Bubble chart
-	let barChart05 = {
+	let bubbleChart = {
 		data:cleanData, 
 		//measurements and positions
 		chartHeight:350,
@@ -182,6 +187,8 @@ function setup(){
 		labelRotation: 45,
 		//padding and sizing texts
 		labelPadding: 15,
+		xAxisPadding: 100,
+		yAxisPadding: 110,
 		textSizing: 13,
 		textSizeSmall: 8,
 		titleSize: 20,
@@ -189,15 +196,14 @@ function setup(){
 		//values for labels and bars
 		xValue: "Age Group",
 		titleLabel: "Statistic Label",
-		yAxisLabel: "UNIT",
+		yAxisLabel: ["Quite Effective", "Not Effective At All", "Not Very Effective"],
 		yValue:"Quite Effective",
 		yValues:["Quite Effective", "Not Effective At All", "Not Very Effective"],
 		xAxisLabel: ["Quite Effective and Not Effective At All"],
-		barLabelValue: ["Quite Effective", "Not Effective At All"],
 	}
 
 	//2nd Barchart vertical
-	let barChart06 = {
+	let barChart2 = {
 		data:cleanData, 
 		//measurements and positions
 		chartHeight:350,
@@ -216,6 +222,8 @@ function setup(){
 		axisLabelRotation: 270,
 		//sizing and padding for texts
 		labelPadding: 3,
+		xAxisPadding: 60,
+		yAxisPadding: 60,
 		textSizing: 15,
 		titleSize: 20,
 		tickTextSize: 15,
@@ -228,8 +236,8 @@ function setup(){
 		yValue:"Not Effective At All",
 		barLabelValue: "Not Effective At All",
 	}
-
-	let barChart07 = {
+	//2nd barchart horizontal
+	let HorizontalBarChart2 = {
 		data:cleanData, 
 		//measurements and positions
 		chartHeight:350,
@@ -244,6 +252,8 @@ function setup(){
 		tickColour: "#ef9b20",
 		//rotations
 		labelRotation: 90,
+		xAxisPadding: 100,
+		yAxisPadding: 75,
 		yaxisLabelRotation: 270,
 		xaxisLabelRotation: 0,
 		//padding and sizing texts
@@ -262,13 +272,13 @@ function setup(){
 		barLabelValue: "Quite Effective",
 	}
 //pushing bars to barcharts array with value of the functions/methods
-	barCharts.push(new BarChart(barChart02));
-	barCharts.push(new HorizontalBarChart(barChart01));
-	barCharts.push(new StackedBarChart(barChart03));
-	barCharts.push(new StackedAvgChart(barChart04));
-	barCharts.push(new BubbleChart(barChart05));
-	barCharts.push(new BarChart(barChart06));
-	barCharts.push(new HorizontalBarChart(barChart07));
+	barCharts.push(new BarChart(barChartRegular));
+	barCharts.push(new HorizontalBarChart(horizontalBarChart));
+	barCharts.push(new StackedBarChart(stackedBarChart));
+	barCharts.push(new StackedAvgChart(avgStackedBarChart));
+	barCharts.push(new BubbleChart(bubbleChart));
+	barCharts.push(new BarChart(barChart2));
+	barCharts.push(new HorizontalBarChart(HorizontalBarChart2));
 };
 
 function draw(){
